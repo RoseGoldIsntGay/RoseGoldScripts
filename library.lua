@@ -347,6 +347,7 @@ function Library:CreateWindow(Config, Parent)
 				local ToggleState = false
 
 				local function SetState(State)
+                    print(Screen, Screen.Parent)
                     if not Screen or not Screen.Parent then
                         return
                     end
