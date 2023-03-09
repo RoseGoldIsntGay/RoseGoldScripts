@@ -347,7 +347,7 @@ function Library:CreateWindow(Config, Parent)
 				local ToggleState = false
 
 				local function SetState(State)
-                    if not Library.Toggle then
+                    if not Screen or not Screen.Parent then
                         return
                     end
 
@@ -813,7 +813,6 @@ function Library:CreateWindow(Config, Parent)
 		return TabInit
 	end
     function WindowInit:Destroy()
-        Library.Toggle = false
         Screen:Destroy()
     end
 	return WindowInit
