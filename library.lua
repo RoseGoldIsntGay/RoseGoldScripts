@@ -48,6 +48,7 @@ function Library:CreateWindow(Config, Parent)
 	local Topbar = Main.Topbar
 	local TContainer = Holder.TContainer
 	local TBContainer = Holder.TBContainer.Holder
+
 	--[[
 	-- idk probably fix for exploits that dont have this function
 	if syn and syn.protect_gui then
@@ -154,7 +155,7 @@ function Library:CreateWindow(Config, Parent)
 	end
 
 	RunService.RenderStepped:Connect(function()
-		if Library.Toggle and Screen and Screen.Parent then
+		if Library.Toggle then
 			Screen.ToolTip.Position = UDim2.new(0,UserInputService:GetMouseLocation().X + 10,0,UserInputService:GetMouseLocation().Y - 5)
 		end
 	end)
@@ -346,7 +347,7 @@ function Library:CreateWindow(Config, Parent)
 				local ToggleState = false
 
 				local function SetState(State)
-                    if not Screen or not Screen.Parent then
+                    if not Library.Toggle then
                         return
                     end
 
@@ -811,6 +812,10 @@ function Library:CreateWindow(Config, Parent)
 		end
 		return TabInit
 	end
+    function WindowInit:Destroy()
+        Library.Toggle = false
+        Window:Destroy()
+    end
 	return WindowInit
 end
 
