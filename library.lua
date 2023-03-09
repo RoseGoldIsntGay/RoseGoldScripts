@@ -155,9 +155,6 @@ function Library:CreateWindow(Config, Parent)
 	end
 
 	RunService.RenderStepped:Connect(function()
-        if Screen.Parent then
-            print(Screen:FindFirstChild("ToolTip"))
-        end
 		if Screen.Parent and Screen:FindFirstChild("ToolTip") then
 			Screen.ToolTip.Position = UDim2.new(0,UserInputService:GetMouseLocation().X + 10,0,UserInputService:GetMouseLocation().Y - 5)
 		end
@@ -350,7 +347,6 @@ function Library:CreateWindow(Config, Parent)
 				local ToggleState = false
 
 				local function SetState(State)
-                    print(Screen, Screen.Parent)
                     if not Screen.Parent then
                         return
                     end
