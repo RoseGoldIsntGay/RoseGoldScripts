@@ -814,7 +814,7 @@ function Library:CreateWindow(Config, Parent)
 	end
     function WindowInit:Destroy()
         Library.Toggle = false
-        Window:Destroy()
+        Screen:Destroy()
     end
 	return WindowInit
 end
