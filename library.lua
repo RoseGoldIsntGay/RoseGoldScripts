@@ -154,7 +154,7 @@ function Library:CreateWindow(Config, Parent)
 	end
 
 	RunService.RenderStepped:Connect(function()
-		if Library.Toggle then
+		if Library.Toggle and Screen then
 			Screen.ToolTip.Position = UDim2.new(0,UserInputService:GetMouseLocation().X + 10,0,UserInputService:GetMouseLocation().Y - 5)
 		end
 	end)
@@ -346,7 +346,7 @@ function Library:CreateWindow(Config, Parent)
 				local ToggleState = false
 
 				local function SetState(State)
-                    if not Toggle.Toggle then
+                    if not Screen then
                         return
                     end
 
