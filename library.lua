@@ -346,6 +346,10 @@ function Library:CreateWindow(Config, Parent)
 				local ToggleState = false
 
 				local function SetState(State)
+                    if not Toggle then
+                        return
+                    end
+                    
 					if State then
 						Toggle.Toggle.BackgroundColor3 = Config.Color
 					elseif not State then
