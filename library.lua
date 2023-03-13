@@ -808,6 +808,9 @@ function Library:CreateWindow(Config, Parent)
 
 				return ColorpickerInit
 			end
+			function SectionInit:GetObject()
+				return Section
+			end
 			return SectionInit
 		end
 		return TabInit
