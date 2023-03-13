@@ -822,6 +822,9 @@ function Library:CreateWindow(Config, Parent)
 			end
 			return SectionInit
 		end
+		function TabInit:GetObject(Name)
+			return Tab
+		end
 		return TabInit
 	end
     function WindowInit:Destroy()
