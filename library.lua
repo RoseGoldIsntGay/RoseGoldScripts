@@ -248,6 +248,12 @@ function Library:CreateWindow(Config, Parent)
 				function LabelInit:GetObject()
 					return Label
 				end
+				function LabelInit:SetColor(Color3)
+					Label.TextColor3 = Color3
+				end
+				function LabelInit:ResetColor()
+					Label.TextColor3 = Color3.fromRGB(200, 200, 200)
+				end
 				return LabelInit
 			end
 			function SectionInit:CreateButton(Name, Callback)
